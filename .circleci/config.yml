@@ -14,13 +14,20 @@ jobs:
     steps:
       - checkout
 
+<<<<<<< HEAD
       - run: 
           command: docker run --rm -v $(pwd):/src -w /src hysnsec/bundle-audit check --format json --output bundle-audit-output.json || true
+=======
+      - run: docker run --rm -v $(pwd):/src -w /src hysnsec/bundle-audit check --format json --output bundle-audit-output.json
+>>>>>>> 21bbfe56e638e923d45b7d13a4c46a941260715f
 
       - store_artifacts:
           path: bundle-audit-output.json
           destination: bundler-audit-artifact
+<<<<<<< HEAD
           when: always
+=======
+>>>>>>> 21bbfe56e638e923d45b7d13a4c46a941260715f
 
   integration:
     steps:
